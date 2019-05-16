@@ -8192,7 +8192,7 @@ jQuery.nodeName = nodeName;
 jQuery.isFunction = isFunction;
 jQuery.isWindow = isWindow;
 jQuery.camelCase = camelCase;
-jQuery.type = toType;
+;
 
 jQuery.now = Date.now;
 

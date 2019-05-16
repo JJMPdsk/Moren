@@ -4,6 +4,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
 using System;
+using System.Configuration;
 using Moren.Models;
 
 namespace Moren
@@ -54,8 +55,8 @@ namespace Moren
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "646070725818875",
-               appSecret: "80111fa3cc4ba575ea50b10d0f2af093");
+               appId: ConfigurationManager.AppSettings["FacebookAppId"],
+               appSecret: ConfigurationManager.AppSettings["FacebookAppSecret"]);
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

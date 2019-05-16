@@ -40,6 +40,9 @@ Generated\ Files/
 *.VisualState.xml
 TestResult.xml
 
+AppSettings.config
+
+
 # Build Results of an ATL Project
 [Dd]ebugPS/
 [Rr]eleasePS/
@@ -145,6 +148,8 @@ nCrunchTemp_*
 *.mm.*
 AutoTest.Net/
 
+
+
 # Web workbench (sass)
 .sass-cache/
 
@@ -196,6 +201,7 @@ csx/
 # Microsoft Azure Emulator
 ecf/
 rcf/
+
 
 # Windows Store app package directories and files
 AppPackages/

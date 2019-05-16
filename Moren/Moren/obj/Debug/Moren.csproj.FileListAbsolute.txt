@@ -138,3 +138,5 @@ C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\bin\Glimpse.AspNet.d
 C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\bin\Glimpse.Core.dll
 C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\bin\Glimpse.EF6.dll
 C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\bin\Glimpse.Mvc5.dll
+C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\obj\Debug\Moren.Migrations.AddRentalTabeToDB.resources
+C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\obj\Debug\Moren.Migrations.AddNumberAvailableToMovieTable.resources
