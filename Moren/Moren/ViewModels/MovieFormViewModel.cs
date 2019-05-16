@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 using Moren.Models;
 
 namespace Moren.ViewModels
@@ -30,13 +28,18 @@ namespace Moren.ViewModels
         [Required]
         public byte? NumberInStock { get; set; }
 
+
         public string Title
         {
             get
             {
                 return Id != 0 ? "Edit Movie" : "New Movie";
             }
-        
+        }
+
+        public MovieFormViewModel()
+        {
+            Id = 0;
         }
 
         public MovieFormViewModel(Movie movie)
@@ -46,11 +49,6 @@ namespace Moren.ViewModels
             ReleaseDate = movie.ReleaseDate;
             NumberInStock = movie.NumberInStock;
             GenreId = movie.GenreId;
-        }
-
-        public MovieFormViewModel()
-        {
-            Id = 0;
         }
     }
 }

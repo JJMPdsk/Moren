@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-using Moren.Models;
 
 namespace Moren.Dtos
 {
@@ -19,8 +15,9 @@ namespace Moren.Dtos
 
         public byte MembershipTypeId { get; set; }
 
-        //[Min18YearsIfAMember]
-        public DateTime? Birthdate { get; set; }
+        public MembershipTypeDto MembershipType { get; set; }
 
+//        [Min18YearsIfAMember]
+        public DateTime? Birthdate { get; set; }
     }
 }

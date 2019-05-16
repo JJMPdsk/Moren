@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Data.Entity;
 using Moren.Models;
 using Moren.ViewModels;
 
@@ -31,6 +28,7 @@ namespace Moren.Controllers
                 Customer = new Customer(),
                 MembershipTypes = membershipTypes
             };
+
             return View("CustomerForm", viewModel);
         }
 
@@ -38,7 +36,6 @@ namespace Moren.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
-
             if (!ModelState.IsValid)
             {
                 var viewModel = new CustomerFormViewModel
@@ -46,6 +43,7 @@ namespace Moren.Controllers
                     Customer = customer,
                     MembershipTypes = _context.MembershipTypes.ToList()
                 };
+
                 return View("CustomerForm", viewModel);
             }
 
@@ -54,12 +52,12 @@ namespace Moren.Controllers
             else
             {
                 var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
-
                 customerInDb.Name = customer.Name;
                 customerInDb.Birthdate = customer.Birthdate;
                 customerInDb.MembershipTypeId = customer.MembershipTypeId;
                 customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
             }
+
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Customers");
@@ -67,9 +65,7 @@ namespace Moren.Controllers
 
         public ViewResult Index()
         {
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
-
-            return View(customers);
+            return View();
         }
 
         public ActionResult Details(int id)

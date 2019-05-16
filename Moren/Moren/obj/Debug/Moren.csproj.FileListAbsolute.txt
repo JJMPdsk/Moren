@@ -129,3 +129,7 @@ C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\bin\System.Web.Http.
 C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\bin\AutoMapper.dll
 C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\bin\AutoMapper.xml
 C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\obj\Debug\Moren.Migrations.ChangedMovieDateAddedToNullable.resources
+C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\obj\Debug\Moren.Migrations.AddDrivingLicenseToApplicationUser.resources
+C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\obj\Debug\Moren.Migrations.AddPhoneToApplicationUser.resources
+C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\obj\Debug\Moren.Migrations.SeedUsers.resources
+C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\obj\Debug\Moren.Migrations.WritePendingModel.resources

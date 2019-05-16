@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Moren.Models
@@ -17,7 +18,7 @@ namespace Moren.Models
         [Required]
         public byte GenreId { get; set; }
 
-        public DateTime? DateAdded { get; set; }
+        public DateTime DateAdded { get; set; }
 
         [Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }

@@ -1,9 +1,9 @@
 ﻿using System;
-using Moren.Models;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
-using System.Data.Entity;
+using Moren.Models;
 using Moren.ViewModels;
 
 namespace Moren.Controllers
@@ -17,14 +17,21 @@ namespace Moren.Controllers
             _context = new ApplicationDbContext();
         }
 
-        public ViewResult Index()
+        protected override void Dispose(bool disposing)
         {
-            var movies = _context.Movies.Include(c => c.Genre).ToList();
-            
-            return View(movies);
+            _context.Dispose();
         }
 
-        public ActionResult New()
+        public ViewResult Index()
+        {
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("List");
+                
+            return View("ReadOnlyList");
+        }
+
+        [Authorize(Roles = RoleName.CanManageMovies)]
+        public ViewResult New()
         {
             var genres = _context.Genres.ToList();
 
@@ -36,19 +43,11 @@ namespace Moren.Controllers
             return View("MovieForm", viewModel);
         }
 
-        public ActionResult Details(int id)
-        {
-            var movie = _context.Movies.Include(c => c.Genre).SingleOrDefault(c => c.Id == id);
-
-            if (movie == null)
-                return HttpNotFound();
-
-            return View(movie);
-        }
-
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
+
             if (movie == null)
                 return HttpNotFound();
 
@@ -60,8 +59,41 @@ namespace Moren.Controllers
             return View("MovieForm", viewModel);
         }
 
+
+        public ActionResult Details(int id)
+        {
+            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
+
+            if (movie == null)
+                return HttpNotFound();
+
+            return View(movie);
+
+        }
+
+
+        // GET: Movies/Random
+        public ActionResult Random()
+        {
+            var movie = new Movie() { Name = "Shrek!" };
+            var customers = new List<Customer>
+            {
+                new Customer { Name = "Customer 1" },
+                new Customer { Name = "Customer 2" }
+            };
+
+            var viewModel = new RandomMovieViewModel
+            {
+                Movie = movie,
+                Customers = customers
+            };
+
+            return View(viewModel);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Save(Movie movie)
         {
             if (!ModelState.IsValid)
@@ -70,6 +102,7 @@ namespace Moren.Controllers
                 {
                     Genres = _context.Genres.ToList()
                 };
+
                 return View("MovieForm", viewModel);
             }
 
