@@ -133,3 +133,8 @@ C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\obj\Debug\Moren.Migr
 C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\obj\Debug\Moren.Migrations.AddPhoneToApplicationUser.resources
 C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\obj\Debug\Moren.Migrations.SeedUsers.resources
 C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\obj\Debug\Moren.Migrations.WritePendingModel.resources
+C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\bin\Glimpse.Ado.dll
+C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\bin\Glimpse.AspNet.dll
+C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\bin\Glimpse.Core.dll
+C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\bin\Glimpse.EF6.dll
+C:\Users\JJMPdsk\Desktop\Programowanie\C#\Moren\Moren\Moren\bin\Glimpse.Mvc5.dll
